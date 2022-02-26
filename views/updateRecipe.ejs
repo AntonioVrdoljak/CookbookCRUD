@@ -1,0 +1,38 @@
+
+<%- include('include/_header'); -%>
+
+<main id="site-main">
+    <div class="container">
+        <div class="box-nav d-flex-justify-between">
+            <div class="filter">
+                <a href="/"><i class="fas fa-angle-double-left"></i>All recipes</a>
+            </div>
+        </div>
+        <div class="form-title text-center">
+            <h2 class="text-dark">Update recipe</h2>
+            <span class="text-light">Use the below form to update recipe</span>
+        </div>
+    
+        <form id="updateRecipe" method="POST">
+            <div class="newRecipe">
+                <div class="form-group">
+                    <label for="recipeName" class="text-light">Recipe name</label>
+                    <input type="hidden" name="id" value="<%= recipes[i]._id %>">
+                    <input type="text" name="recipeName" value="<%= recipes[i].name %>" placeholder="Enter recipe name">
+                </div>
+                <div class="form-group">
+                    <label for="ingredients" class="text-light">Ingredients</label>
+                    <input type="text" name="ingredients" value="<%= recipes[i].ingredients %>" placeholder="Enter ingredients for recipe">
+                </div>
+                <div class="form-group">
+                    <label for="description" class="text-light">Description</label>
+                    <input type="text" name="description" value="<%= recipes[i].description %>" placeholder="Descripition">
+                </div>
+                <div class="form-group">
+                    <button type="submit" class="btn text-dark update">Save</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</main>
+<%- include('include/_footer'); -%>
